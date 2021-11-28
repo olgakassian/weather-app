@@ -12,10 +12,78 @@
       crossorigin="anonymous"
     />
     <title>Weather App</title>
-    <div class="container">
-      <h1>Hello World</h1>
-    </div>
-    <script src="src/app.js"></script>
   </head>
-  <body></body>
+  <body>
+    <link rel="stylesheet" href="src/style.css" />
+
+    <!-- Top Structure of the App. Main title plus search bar. -->
+    <div class="app">
+      <div class="container">
+        <div class="weather-app">
+          <h1>Weather App</h1>
+          <form action="">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Enter a city..."
+                  class="form-control search-input"
+                />
+              </div>
+
+              <div class="col-3 p-0">
+                <input
+                  type="submit"
+                  class="btn btn-primary w-100"
+                  value="Search"
+                />
+              </div>
+            </div>
+          </form>
+
+          <!-- Section with Current Weather Information -->
+          <div class="weather-info">
+            <div class="row">
+              <div class="col-6">
+                <h1>New York</h1>
+                <ul>
+                  <li>
+                    <span class="week-day"> Friday </span>
+                    <span class="day-time">11:58</span>
+                  </li>
+                  <li>broken clouds</li>
+                  <li>
+                    Humidity:
+                    <strong> 58% </strong>
+                  </li>
+                  <li>
+                    Wind:
+                    <strong> 0.89km/h </strong>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-6">
+                <img
+                  src="src/weather-icons/2682848_day_forecast_sun_sunny_weather_icon.png"
+                  alt=""
+                  width="30%"
+                />
+                <span class="temperature">18</span>
+                <span class="unit">ºC | ºF </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Link to Open Source Code -->
+        <small>
+          <a href="https://github.com/olgakassian/weather-app" target="_blank">
+            Open-source code</a
+          >, by Olga Kassian
+        </small>
+      </div>
+    </div>
+
+    <script src="src/app.js"></script>
+  </body>
 </html>
