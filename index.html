@@ -18,64 +18,67 @@
 
     <!-- Top Structure of the App. Main title plus search bar. -->
     <div class="app">
-      <div class="container">
-        <div class="weather-app">
-          <h1>Weather App</h1>
-          <form action="">
-            <div class="row">
-              <div class="col-9">
-                <input
-                  type="search"
-                  placeholder="Enter a city..."
-                  class="form-control search-input"
-                />
-              </div>
-
-              <div class="col-3 p-0">
-                <input
-                  type="submit"
-                  class="btn btn-primary w-100"
-                  value="Search"
-                />
-              </div>
+      <div class="container weather-app">
+        <img
+          src="src/weather-icons/shecodes_logo.png"
+          alt="She Codes Logo"
+          width="150px"
+          class="shecodes-logo"
+        />
+        <form action="">
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="search"
+                placeholder="Enter a city..."
+                class="form-control search-input"
+              />
             </div>
-          </form>
 
-          <!-- Section with Current Weather Information -->
-          <div class="weather-info">
-            <div class="row">
-              <div class="col-6">
-                <h1>New York</h1>
-                <ul>
-                  <li>
-                    <span class="week-day"> Friday </span>
-                    <span class="day-time">11:58</span>
-                  </li>
-                  <li>broken clouds</li>
-                  <li>
-                    Humidity:
-                    <strong> 58% </strong>
-                  </li>
-                  <li>
-                    Wind:
-                    <strong> 0.89km/h </strong>
-                  </li>
-                </ul>
-              </div>
+            <div class="col-3 p-0">
+              <input
+                type="submit"
+                class="btn btn-primary w-100 search-btn"
+                value="Search"
+              />
+            </div>
+          </div>
+        </form>
+        <hr />
+        <!-- Section with Current Weather Information -->
+        <div class="weather-info">
+          <div class="row">
+            <div class="col-6">
+              <h1>New York, USA</h1>
+              <ul>
+                <li>
+                  <strong>
+                    <span class="week-day"> Friday, </span>
+                    <span class="day-time">11:58</span> | Sunny
+                  </strong>
+                </li>
+                <li>Humidity: 58%</li>
+                <li>Wind: 0.89km/h</li>
+              </ul>
+            </div>
 
-              <div class="col-6">
+            <div class="col-6">
+              <div class="float-right">
                 <img
                   src="src/weather-icons/2682848_day_forecast_sun_sunny_weather_icon.png"
                   alt=""
-                  width="30%"
+                  width="80px"
+                  class="current-weather-icon"
                 />
-                <span class="temperature">18</span>
-                <span class="unit">ºC | ºF </span>
+                <span class="temperature">10</span>
+                <span class="unit">ºC | ºF</span>
               </div>
             </div>
           </div>
         </div>
+
         <!-- Link to Open Source Code -->
+        <hr />
         <small>
           <a href="https://github.com/olgakassian/weather-app" target="_blank">
             Open-source code</a

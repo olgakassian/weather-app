@@ -1,0 +1,112 @@
+body {
+  background-color: #f9f7fe;
+  color: #212529;
+  font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.weather-app {
+  background-color: white;
+  border-radius: 20px;
+  margin-top: 5%;
+  max-width: 750px;
+  padding: 3%;
+}
+
+/* CSS For top structure of the App. Main title plus search bar.*/
+
+.search-input {
+  background: #f9f7fe;
+  border: none;
+  border-radius: 6px;
+  color: #a9a6b3;
+  display: inline-block;
+  font-size: 16px;
+  height: 50px;
+  line-height: 20px;
+  padding: 15px 20px;
+}
+
+.btn {
+  background: #885df1;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 15px 0;
+  border: none;
+  height: 50px;
+}
+
+.btn:hover {
+  background: #885df1;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 15px 0;
+  border: none;
+  height: 50px;
+}
+
+form {
+  padding-top: 4%;
+  padding-bottom: 2%;
+}
+
+hr {
+  background-color: #f9f7fe;
+  border: 0;
+  height: 0.2px;
+}
+
+/* CSS For section with Current Weather information.*/
+
+.weather-info {
+  margin: 30px 0 10px;
+}
+h1 {
+  line-height: 29px;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 48px;
+  color: #272142;
+}
+
+li {
+  list-style: none;
+  color: #a9a6b3;
+  padding: none;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+.current-weather-icon {
+  margin-top: 0px;
+  padding-top: 0px;
+  display: inline;
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.temperature {
+  color: #212121;
+  font-weight: 400;
+  margin-left: 0px;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 1;
+}
+
+.unit {
+  color: #212121;
+  font-size: 25px;
+  line-height: 36px;
+  font-weight: 400;
+  position: relative;
+  line-height: 1;
+  top: -34px;
+}
