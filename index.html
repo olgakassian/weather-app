@@ -11,11 +11,11 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
   <body>
-    <link rel="stylesheet" href="src/style.css" />
-
     <!-- Top Structure of the App. Main title plus search bar. -->
     <div class="app">
       <div class="container weather-app">
@@ -32,6 +32,7 @@
                 type="search"
                 placeholder="Enter a city..."
                 class="form-control search-input"
+                id="entered-city"
               />
             </div>
 
@@ -49,16 +50,17 @@
         <div class="weather-info">
           <div class="row">
             <div class="col-6">
-              <h1>New York, USA</h1>
+              <h1 id="city"></h1>
               <ul>
                 <li>
                   <strong>
                     <span class="week-day"> Friday, </span>
-                    <span class="day-time">11:58</span> | Sunny
+                    <span class="day-time">11:58</span> |
+                    <span id="description"></span>
                   </strong>
                 </li>
-                <li>Humidity: 58%</li>
-                <li>Wind: 0.89km/h</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> Km/h</li>
               </ul>
             </div>
 
@@ -70,7 +72,7 @@
                   width="80px"
                   class="current-weather-icon"
                 />
-                <span class="temperature">10</span>
+                <span class="temperature" id="temperature"></span>
                 <span class="unit">ºC | ºF</span>
               </div>
             </div>

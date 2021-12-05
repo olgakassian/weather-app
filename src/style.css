@@ -73,8 +73,9 @@ h1 {
 }
 
 li {
-  list-style: none;
   color: #a9a6b3;
+  list-style: none;
+  text-transform: capitalize;
   padding: none;
 }
 
