@@ -111,3 +111,12 @@ ul {
   line-height: 1;
   top: -34px;
 }
+
+.unit .active {
+  color: #212121;
+  cursor: default;
+}
+
+.unit .active:hover {
+  text-decoration: none;
+}
