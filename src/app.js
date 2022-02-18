@@ -21,6 +21,13 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}`;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "57b2c40fdae71a6ba41d72685e3226e2";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
   celsiusTemp = response.data.main.temp;
 
@@ -42,6 +49,8 @@ function displayTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -56,11 +65,6 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#entered-city");
   search(cityInputElement.value);
 }
-
-let celsiusTemp = null;
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
 
 function displayFahreinheitTemp(event) {
   event.preventDefault();
@@ -79,6 +83,42 @@ function displayCelsiusTemp(event) {
 
   tempElement.innerHTML = Math.round(celsiusTemp);
 }
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col-2 daily-forecast-section">
+         <div class="weather-forecast-date">${day}</div>
+         <img
+           class="forecast-icon"
+           src="https://openweathermap.org/img/wn/04d@2x.png"
+           alt=""
+           width="40px"
+         />
+         <div class="weather-forecast-temperatures">
+           <span class="max-temp">18º </span>
+           <span class="min-temp"> 12º</span>
+         </div>
+       </div>
+     
+     `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+let celsiusTemp = null;
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
 let fahreinheitLink = document.querySelector("#fahrenheit-link");
 fahreinheitLink.addEventListener("click", displayFahreinheitTemp);

@@ -145,6 +145,8 @@ ul {
 }
 .daily-forecast-section {
   display: inline;
+  max-width: 100px;
+  padding: 5px;
 }
 
 .daily-forecast-section:hover {
