@@ -73,24 +73,6 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function displayFahreinheitTemp(event) {
-  event.preventDefault();
-  let fahreinheitTemperature = (celsiusTemp * 9) / 5 + 32;
-  celsiusLink.classList.remove("active");
-  fahreinheitLink.classList.add("active");
-  let tempElement = document.querySelector("#temperature");
-  tempElement.innerHTML = Math.round(fahreinheitTemperature);
-}
-
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temperature");
-  fahreinheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-
-  tempElement.innerHTML = Math.round(celsiusTemp);
-}
-
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -125,15 +107,7 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-let celsiusTemp = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let fahreinheitLink = document.querySelector("#fahrenheit-link");
-fahreinheitLink.addEventListener("click", displayFahreinheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 search("New York");
